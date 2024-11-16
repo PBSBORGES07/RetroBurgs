@@ -7,35 +7,32 @@
 
 body {
     background: url('') no-repeat center center/cover;
-    background-color: #000000;
-    color: #000000;
-    overflow-x: hidden; /* Evitar rolagem horizontal */
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
 }
 
 /* Cabeçalho */
 header {
     background: url('assets/fundopreto.png') no-repeat center center/cover;
-    background-color: #000000;
+    background-color: #000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 15px 5%;
     flex-wrap: wrap;
 }
 
 header .logo h1 {
     color: #fff;
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    gap: 20px;
     flex-wrap: wrap;
-}
-
-nav ul li {
-    margin-left: 20px;
 }
 
 nav ul li a {
@@ -52,7 +49,7 @@ nav ul li a:hover {
 /* Banner */
 .banner {
     background: url('assets/BANNER1.png') no-repeat center center/cover;
-    height: 500px;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,12 +60,12 @@ nav ul li a:hover {
 }
 
 .banner h2 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 10px;
 }
 
 .banner p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 3vw, 1.5rem);
     margin-bottom: 20px;
 }
 
@@ -88,19 +85,25 @@ nav ul li a:hover {
 /* Menu */
 #menu {
     background: url('assets/FUNDOPROMENU.png') repeat center center/cover;
-    padding: 40px;
+    padding: 50px 5%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #menu h2 {
     margin-bottom: 40px;
+    font-size: clamp(2rem, 4vw, 3rem);
 }
 
 .menu-grid {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
-    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .card {
@@ -108,19 +111,19 @@ nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 280px;
     text-align: center;
-    margin-bottom: 20px;
 }
 
 .card img {
     max-width: 100%;
     border-radius: 10px;
-    height: auto;
+    height: 150px;
+    object-fit: cover;
 }
 
 .card h3 {
     margin: 15px 0;
+    font-size: 1.2rem;
 }
 
 .card p {
@@ -136,40 +139,42 @@ nav ul li a:hover {
 /* Sobre */
 #sobre {
     background: url('assets/fundopreto.png') no-repeat center center/cover;
-    padding: 50px 20px;
+    padding: 50px 5%;
     text-align: center;
 }
 
 #sobre p {
-    max-width: 600px;
+    max-width: 700px;
     margin: 20px auto;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
 }
 
 /* Contato */
 #contato {
-    padding: 50px 20px;
+    padding: 50px 5%;
     text-align: center;
 }
 
 #contato form {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
+    max-width: 600px;
     margin: auto;
 }
 
 #contato input,
 #contato textarea {
     margin-bottom: 15px;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    font-size: 1rem;
 }
 
 #contato button {
     background-color: #ff6600;
     color: #fff;
-    padding: 10px;
+    padding: 12px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -183,7 +188,7 @@ nav ul li a:hover {
 /* Rodapé */
 footer {
     background: url('assets/fundopreto.png') no-repeat center center/cover;
-    background-color: #000000;
+    background-color: #000;
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -193,98 +198,79 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
-    flex-wrap: wrap;
+    padding: 0 5%;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
 }
 
 .social-icons a {
-    margin-left: 20px;
-    text-decoration: none;
     color: #fff;
     font-size: 24px;
-    transition: transform 0.3s, color 0.3s;
+    transition: transform 0.3s;
 }
 
 .social-icons a:hover {
-    color: #ffffff;
+    color: #cc0000;
     transform: scale(1.1);
 }
 
-/* Responsividade */
+/* Media Queries */
 @media (max-width: 1024px) {
     header {
         flex-direction: column;
-        align-items: flex-start;
+        text-align: center;
     }
 
     nav ul {
         flex-direction: column;
+        gap: 10px;
         margin-top: 10px;
     }
 
     .banner {
-        height: 400px;
-        padding: 20px;
+        height: 50vh;
     }
 
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
     .banner h2 {
         font-size: 2rem;
     }
 
     .card {
-        width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    header {
         padding: 15px;
-        text-align: center;
-    }
-
-    .banner {
-        height: 300px;
-    }
-
-    .banner h2 {
-        font-size: 1.8rem;
-    }
-
-    .banner p {
-        font-size: 1rem;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .social-icons {
-        margin-top: 15px;
     }
 }
 
 @media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    .banner {
+        height: 40vh;
+    }
+
     .banner h2 {
         font-size: 1.5rem;
     }
 
-    .banner p {
-        font-size: 0.9rem;
-    }
-
-    #menu h2 {
-        font-size: 1.8rem;
-    }
-
     #contato form {
-        width: 100%;
+        padding: 0 10px;
     }
 
-    .card {
-        width: 100%;
-        margin-bottom: 20px;
+    .footer-container {
+        flex-direction: column;
+        gap: 10px;
     }
 }
