@@ -372,3 +372,50 @@ width: 1200px;
         padding: 6px 12px;
     }
 }
+
+
+
+
+
+/* Estilos gerais para o contêiner da lista */
+ul.social-buttons {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 50px 0;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Estilos para os botões */
+ul.social-buttons li a {
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #FF3D00; /* Cor padrão para o botão (IFOOD) */
+    padding: 12px 20px;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.3s;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos diferentes para o botão do WhatsApp */
+ul.social-buttons li:nth-child(2) a {
+    background-color: #25D366; /* Cor do WhatsApp */
+}
+
+/* Efeito de hover */
+ul.social-buttons li a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+    ul.social-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
