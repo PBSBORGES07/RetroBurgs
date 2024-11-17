@@ -139,7 +139,7 @@ ul.social-buttons li:nth-child(2) a {
     }
 
     .banner {
-        height: 400px; /* Reduzindo a altura do banner */
+        height: 300px; /* Reduzindo a altura do banner */
     }
 
     .COMPROMISSO img,
@@ -188,7 +188,7 @@ ul.social-buttons li:nth-child(2) a {
 
     ul.social-buttons li a {
         padding: 10px 15px;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 }
 
@@ -271,7 +271,7 @@ ul.social-buttons li:nth-child(2) a {
     }
 
     header nav ul li a {
-        font-size: 1rem; /* Font menor ainda */
+        font-size: 1.2rem; /* Font menor ainda */
     }
 }
 
@@ -322,8 +322,8 @@ ul.social-buttons li:nth-child(2) a {
 /* Media Queries para Responsividade */
 @media (max-width: 1200px) {
     header .logo img {
-        height: 120px; /* Logo um pouco menor em telas médias */
-        width: 120px;
+        height: 180px; /* Logo um pouco menor em telas médias */
+        width: 180px;
     }
 
     nav ul {
@@ -331,7 +331,7 @@ ul.social-buttons li:nth-child(2) a {
     }
 
     nav ul li a {
-        font-size: 1.1rem; /* Font menor em telas médias */
+        font-size: 2rem; /* Font menor em telas médias */
     }
 }
 
